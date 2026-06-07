@@ -27,7 +27,10 @@ fn cross_region_profile_resolves() {
 #[test]
 fn arn_resolves() {
     let arn = "arn:aws:bedrock:us-east-1::foundation-model/cohere.command-r-plus-v1:0";
-    assert_eq!(default_pricing(arn), default_pricing("cohere.command-r-plus"));
+    assert_eq!(
+        default_pricing(arn),
+        default_pricing("cohere.command-r-plus")
+    );
 }
 
 #[test]
@@ -71,4 +74,27 @@ fn total_tokens_helper() {
         output_tokens: 50,
     };
     assert_eq!(u.total_tokens(), 150);
+}
+
+#[cfg(feature = "serde")]
+#[test]
+fn usage_serde_roundtrip() {
+    // Field names match the Bedrock Converse-style snake_case keys.
+    let u = Usage {
+        input_tokens: 1_234,
+        output_tokens: 567,
+    };
+    let json = serde_json::to_string(&u).unwrap();
+    let back: Usage = serde_json::from_str(&json).unwrap();
+    assert_eq!(u, back);
+
+    // Missing fields default to 0 thanks to `#[serde(default)]`.
+    let partial: Usage = serde_json::from_str(r#"{"input_tokens": 10}"#).unwrap();
+    assert_eq!(
+        partial,
+        Usage {
+            input_tokens: 10,
+            output_tokens: 0,
+        }
+    );
 }

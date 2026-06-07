@@ -122,63 +122,105 @@ pub const DEFAULT_PRICING_TABLE: &[(&str, Pricing)] = &[
     // Meta Llama 3 family
     (
         "meta.llama3-8b-instruct",
-        Pricing { input_per_mtok: 0.30, output_per_mtok: 0.60 },
+        Pricing {
+            input_per_mtok: 0.30,
+            output_per_mtok: 0.60,
+        },
     ),
     (
         "meta.llama3-70b-instruct",
-        Pricing { input_per_mtok: 2.65, output_per_mtok: 3.50 },
+        Pricing {
+            input_per_mtok: 2.65,
+            output_per_mtok: 3.50,
+        },
     ),
     (
         "meta.llama3-1-8b-instruct",
-        Pricing { input_per_mtok: 0.22, output_per_mtok: 0.22 },
+        Pricing {
+            input_per_mtok: 0.22,
+            output_per_mtok: 0.22,
+        },
     ),
     (
         "meta.llama3-1-70b-instruct",
-        Pricing { input_per_mtok: 0.72, output_per_mtok: 0.72 },
+        Pricing {
+            input_per_mtok: 0.72,
+            output_per_mtok: 0.72,
+        },
     ),
     (
         "meta.llama3-1-405b-instruct",
-        Pricing { input_per_mtok: 5.32, output_per_mtok: 16.00 },
+        Pricing {
+            input_per_mtok: 5.32,
+            output_per_mtok: 16.00,
+        },
     ),
     // Mistral
     (
         "mistral.mistral-large-2407",
-        Pricing { input_per_mtok: 2.00, output_per_mtok: 6.00 },
+        Pricing {
+            input_per_mtok: 2.00,
+            output_per_mtok: 6.00,
+        },
     ),
     (
         "mistral.mistral-small-2402",
-        Pricing { input_per_mtok: 1.00, output_per_mtok: 3.00 },
+        Pricing {
+            input_per_mtok: 1.00,
+            output_per_mtok: 3.00,
+        },
     ),
     // Cohere Command R / R+
     (
         "cohere.command-r-plus",
-        Pricing { input_per_mtok: 3.00, output_per_mtok: 15.00 },
+        Pricing {
+            input_per_mtok: 3.00,
+            output_per_mtok: 15.00,
+        },
     ),
     (
         "cohere.command-r",
-        Pricing { input_per_mtok: 0.50, output_per_mtok: 1.50 },
+        Pricing {
+            input_per_mtok: 0.50,
+            output_per_mtok: 1.50,
+        },
     ),
     // Amazon Titan Text
     (
         "amazon.titan-text-premier",
-        Pricing { input_per_mtok: 0.50, output_per_mtok: 1.50 },
+        Pricing {
+            input_per_mtok: 0.50,
+            output_per_mtok: 1.50,
+        },
     ),
     (
         "amazon.titan-text-express",
-        Pricing { input_per_mtok: 0.20, output_per_mtok: 0.60 },
+        Pricing {
+            input_per_mtok: 0.20,
+            output_per_mtok: 0.60,
+        },
     ),
     (
         "amazon.titan-text-lite",
-        Pricing { input_per_mtok: 0.15, output_per_mtok: 0.20 },
+        Pricing {
+            input_per_mtok: 0.15,
+            output_per_mtok: 0.20,
+        },
     ),
     // AI21 Jamba
     (
         "ai21.jamba-1-5-large",
-        Pricing { input_per_mtok: 2.00, output_per_mtok: 8.00 },
+        Pricing {
+            input_per_mtok: 2.00,
+            output_per_mtok: 8.00,
+        },
     ),
     (
         "ai21.jamba-1-5-mini",
-        Pricing { input_per_mtok: 0.20, output_per_mtok: 0.40 },
+        Pricing {
+            input_per_mtok: 0.20,
+            output_per_mtok: 0.40,
+        },
     ),
 ];
 
